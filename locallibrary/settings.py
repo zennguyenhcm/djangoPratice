@@ -11,9 +11,13 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
+BASE_DIR =Path(__file__).resolve(strict=True).parent.parent
+print("baseDir: ",BASE_DIR)
+STATIC_ROOT = os.path.join(BASE_DIR, 'static_collected')
+print("baseDir: ",STATIC_ROOT)
 
 
 # Quick-start development settings - unsuitable for production
@@ -37,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'locallibrary.hello',
 ]
 
 MIDDLEWARE = [
@@ -68,7 +73,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'locallibrary.wsgi.application'
-
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
